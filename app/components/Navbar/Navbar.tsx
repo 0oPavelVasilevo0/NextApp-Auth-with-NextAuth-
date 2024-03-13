@@ -33,9 +33,6 @@ export default function Navbar() {
                 <div className={`nav-page ${isOpen ? 'active' : ''}`}>
                     {navLinks.map((link) => {
                         return (
-
-                           
-
                                     <Link
                                         href={link.path}
                                         key={link.id}
@@ -43,11 +40,7 @@ export default function Navbar() {
                                         onClick={closeMenu}
                                     >
                                         {link.name}
-
                                     </Link>
-
-                            
-
                         )
                     })}
                     <UserButton afterSignOutUrl="/sign-in" />

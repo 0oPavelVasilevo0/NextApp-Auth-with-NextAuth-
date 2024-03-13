@@ -5,14 +5,10 @@ import fb from '../img/fb.svg'
 import insta from '../img/insta.svg'
 import group from '../img/Group.svg'
 import linkedin from '../img/Linkedin.svg'
-import { useUser } from "@clerk/nextjs";
 
 export default function Footer() {
 
-    const { user, isLoaded } = useUser()
-
     return (
-        (isLoaded && user) && (
             <footer className="contact">
                 <div className="contact-item">
                     <a href="https://www.facebook.com/" target="blank">
@@ -31,5 +27,4 @@ export default function Footer() {
                 <p>Copyright ©2020 All rights reserved </p>
             </footer>
         )
-    )
 }

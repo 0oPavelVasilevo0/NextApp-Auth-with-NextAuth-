@@ -7,11 +7,9 @@ import menu_close from '../../img/menu-close.svg'
 import { navLinks } from "./navLinks";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { UserButton, useUser } from "@clerk/nextjs";
 
 export default function Navbar() {
 
-    const { user, isLoaded } = useUser()
     const [isOpen, setOpen] = useState(false);
     const pathname = usePathname()
 
@@ -27,7 +25,6 @@ export default function Navbar() {
 
 
     return (
-        (isLoaded && user) && (
         <nav className="container">
             <div className="nav-container">
                 <div className={`nav-page ${isOpen ? 'active' : ''}`}>
@@ -43,7 +40,6 @@ export default function Navbar() {
                                     </Link>
                         )
                     })}
-                    <UserButton afterSignOutUrl="/sign-in" />
                 </div>
                 {isOpen ? (
                     <button className="btn-menu-close" onClick={toggleMenu}>
@@ -56,6 +52,5 @@ export default function Navbar() {
                 )}
             </div>
         </nav>
-    )
     )
 }
